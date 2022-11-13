@@ -8,9 +8,9 @@ import axios from 'axios';
 
 function App() {
   const [category, setCategory] = useState([])
-  const [selectedCategoryId, setSelectedCategoryId] = useState(null)
-  const [questions, setQuestions] = useState([])
-  const [url, setUrl] = useState()
+  const [selectedCategoryId, setSelectedCategoryId] = useState()
+  const [Questions, setQuestions] = useState([])
+  const [url, setUrl] = useState([])
 
   useEffect(() => {
     requestCategories().then(res => setCategory(res.data.trivia_categories))
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <section className='trivia-container'>
+      <section className='quest-container'>
         {selectedCategoryId ? (
           <Questions
             selectedCategoryId={selectedCategoryId}
@@ -31,7 +31,7 @@ function App() {
         ) : (
           <>
           {category.map((topic) => (
-              <div className='button-container'>
+              <div className='cat-container'>
                 <Categories
                   setSelectedCategoryId={setSelectedCategoryId}
                   topicId={topic.id}

@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { requestQuestions } from './requests'
 
 
-export const Questions = ({ inquiry, correct, incorrect }) => {
-const [questionArray, setQuestionArray] = useState(inquiry)
+export const Questions = ({ selectedCategoryId, setSelectedCategoryId }) => {
+const [questionArray, setQuestionArray] = useState()
 
    return (
     <div>
-        <p>{questionArray}</p>
-        <button>{correct} {incorrect}</button>
+        <p></p>
+        <button></button>
     </div>
    )
 }
